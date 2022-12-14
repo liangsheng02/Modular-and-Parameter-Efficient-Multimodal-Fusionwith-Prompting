@@ -1,0 +1,27 @@
+export WANDB_WATCH=all
+CUDA_VISIBLE_DEVICES=2 python run_vqa.py \
+--do_train \
+--do_eval \
+--do_predict \
+--output_dir /mounts/data/proj/pr/ \
+--seed=232 \
+--per_device_train_batch_size=32 \
+--per_device_eval_batch_size=32 \
+--prompt_len=20 \
+--prompt_mask=1 \
+--prompt_pos=0 \
+--vis_proj=0 \
+--tune="prompt" \
+--logging_steps=100 \
+--learning_rate=1e-1 \
+--eval_accumulation_steps=1 \
+--overwrite_output_dir \
+--fp16 \
+--evaluation_strategy="steps" \
+--max_eval_samples=500 \
+--max_train_samples=128 \
+--max_step=3000 \
+--predict_with_generate \
+--generation_max_length=6 \
+--generation_num_beams=1 \
+--run_name=real_128_pr_seed_0

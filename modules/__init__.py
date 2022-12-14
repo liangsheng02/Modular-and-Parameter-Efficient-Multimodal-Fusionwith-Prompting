@@ -1,0 +1,2 @@
+from .modeling_bart import BartForConditionalGeneration_P
+from .modeling_bart_mmsd import BartForConditionalGeneration_P as BartForConditionalGeneration_3P
